@@ -3,52 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>What's True</title>
+  <title>what's true</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Courier New', monospace;
+      background-color: #000;
+      color: #fff;
       text-align: center;
-      background-color: #fff;
-      color: #000;
+      padding: 50px;
+    }
+    .header {
+      color: #888;
+      font-size: 24px;
+      text-transform: lowercase;
+    }
+    .fact, .finding {
+      font-size: 28px;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
     }
     .fact {
-      margin-top: 50px;
-      font-size: 24px;
-      line-height: 1.5;
+      color: #fff;
     }
-    .tags a {
-      color: #000;
+    .finding {
+      font-size: 20px;
+    }
+    .archive {
+      margin-top: 30px;
+      color: #888;
+      font-size: 18px;
+    }
+    .archive a {
+      color: #888;
       text-decoration: none;
-      padding: 5px 10px;
-      border: 1px solid #000;
-      margin: 5px;
     }
-    .tags a:hover {
-      background-color: #000;
+    .archive a:hover {
       color: #fff;
     }
   </style>
 </head>
 <body>
-  <h1>What's True</h1>
-  <div id="fact-container">
-    <p>Loading fact...</p>
-  </div>
+  <div class="header">this is true...</div>
+  <div id="fact" class="fact"></div>
+  <div class="header" style="margin-top: 30px;">this means...</div>
+  <div id="finding" class="finding"></div>
+  <div class="archive"><a href="archive.html">archive</a></div>
+
   <script>
     fetch('facts.json')
       .then(response => response.json())
       .then(facts => {
         const randomFact = facts[Math.floor(Math.random() * facts.length)];
-        document.getElementById('fact-container').innerHTML = `
-          <div class="fact">
-            <p>${randomFact.fact}</p>
-            <div class="tags">
-              ${randomFact.tags.map(tag => `<a href="#">${tag}</a>`).join(' | ')}
-            </div>
-          </div>
-        `;
+        typeWriter("fact", randomFact.fact, 50);
+        typeWriter("finding", "undocumented immigrants not only pay more than billionaires and corporations, they pay more than their fair share. on a pure cost-benefit basis, they pay more than you.", 50);
       })
       .catch(error => console.error('Error loading facts:', error));
+
+    function typeWriter(elementId, text, speed) {
+      let i = 0;
+      function type() {
+        if (i < text.length) {
+          document.getElementById(elementId).innerHTML += text.charAt(i);
+          i++;
+          setTimeout(type, speed);
+        }
+      }
+      type();
+    }
   </script>
 </body>
 </html>
