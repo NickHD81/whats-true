@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What's True</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #fff;
+      color: #000;
+    }
+    .fact {
+      margin-top: 50px;
+      font-size: 24px;
+      line-height: 1.5;
+    }
+    .tags a {
+      color: #000;
+      text-decoration: none;
+      padding: 5px 10px;
+      border: 1px solid #000;
+      margin: 5px;
+    }
+    .tags a:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>What's True</h1>
+  <div id="fact-container">
+    <p>Loading fact...</p>
+  </div>
+  <script>
+    fetch('facts.json')
+      .then(response => response.json())
+      .then(facts => {
+        const randomFact = facts[Math.floor(Math.random() * facts.length)];
+        document.getElementById('fact-container').innerHTML = `
+          <div class="fact">
+            <p>${randomFact.fact}</p>
+            <div class="tags">
+              ${randomFact.tags.map(tag => `<a href="#">${tag}</a>`).join(' | ')}
+            </div>
+          </div>
+        `;
+      })
+      .catch(error => console.error('Error loading facts:', error));
+  </script>
+</body>
+</html>
