@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fact Archive - What's True</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #fff;
+      color: #000;
+    }
+    .fact {
+      margin: 20px auto;
+      width: 80%;
+      border-bottom: 1px solid #000;
+      padding: 10px 0;
+    }
+    .tags {
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>Fact Archive</h1>
+  <div id="archive-container">
+    <p>Loading facts...</p>
+  </div>
+  <a href="index.html">Back to Home</a>
+  <script>
+    fetch('facts.json')
+      .then(response => response.json())
+      .then(facts => {
+        const container = document.getElementById('archive-container');
+        container.innerHTML = facts.map(fact => `
+          <div class="fact">
+            <p>${fact.fact}</p>
+            <div class="tags">Tags: ${fact.tags.join(', ')}</div>
+          </div>
+        `).join('');
+      })
+      .catch(error => console.error('Error loading facts:', error));
+  </script>
+</body>
+</html>
