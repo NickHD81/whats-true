@@ -22,7 +22,7 @@
       display: flex;
       align-items: center; /* Vertically aligns headers with facts */
       gap: 20px; /* Space between header and fact */
-      margin-bottom: 50px; /* Increased spacing between sections */
+      margin-bottom: 80px; /* Increased spacing between sections */
     }
     .header {
       color: #bbb; /* Lightened gray */
@@ -37,13 +37,14 @@
       white-space: normal; /* Wraps text properly */
       overflow-wrap: break-word; /* Ensures text doesn't overflow */
       max-width: 80%; /* Keeps text from running off-screen */
+      margin-left: 50px; /* Aligns fact and meaning left while separating from headers */
     }
     .finding {
-      margin-top: 30px; /* Adds more space between fact and meaning statement */
+      margin-top: 50px; /* Adds even more space between fact and meaning statement */
     }
     .archive {
       position: absolute;
-      bottom: 60px; /* Moved archive link up */
+      bottom: 100px; /* Moved archive link further up */
       right: 20px;
       color: #bbb;
       font-size: 18px;
@@ -63,7 +64,7 @@
       <div class="header">this is true...</div>
       <div id="fact" class="fact"></div>
     </div>
-    <div class="fact-container" style="margin-top: 50px;">
+    <div class="fact-container" style="margin-top: 80px;">
       <div class="header">this means...</div>
       <div id="finding" class="finding"></div>
     </div>
