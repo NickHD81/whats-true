@@ -18,16 +18,17 @@
       align-items: flex-start;
       max-width: 80%; /* Wraps text to fit within the viewport */
     }
-    .header {
-      color: #bbb; /* Lightened gray */
-      font-size: 24px;
-      text-transform: lowercase;
-      margin-bottom: 10px;
-    }
     .fact-container {
       display: flex;
-      align-items: flex-start;
+      align-items: center; /* Vertically aligns headers with facts */
       gap: 20px; /* Space between header and fact */
+      margin-bottom: 30px; /* Adds more spacing between sections */
+    }
+    .header {
+      color: #bbb; /* Lightened gray */
+      font-size: 20px; /* Reduced size */
+      text-transform: lowercase;
+      flex-shrink: 0; /* Prevents the header from resizing */
     }
     .fact, .finding {
       font-size: 28px;
@@ -38,7 +39,6 @@
     }
     .finding {
       font-size: 20px;
-      margin-top: 20px;
     }
     .archive {
       position: absolute;
@@ -62,7 +62,7 @@
       <div class="header">this is true...</div>
       <div id="fact" class="fact"></div>
     </div>
-    <div class="fact-container" style="margin-top: 30px;">
+    <div class="fact-container">
       <div class="header">this means...</div>
       <div id="finding" class="finding"></div>
     </div>
