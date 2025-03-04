@@ -12,6 +12,12 @@
       text-align: left;
       padding: 50px;
     }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 80%; /* Wraps text to fit within the viewport */
+    }
     .header {
       color: #bbb; /* Lightened gray */
       font-size: 24px;
@@ -19,14 +25,16 @@
       margin-bottom: 10px;
     }
     .fact-container {
-      margin-left: 40px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px; /* Space between header and fact */
     }
     .fact, .finding {
       font-size: 28px;
       font-weight: bold;
-      white-space: nowrap;
-      overflow: hidden;
-      display: inline-block;
+      white-space: normal; /* Wraps text properly */
+      overflow-wrap: break-word; /* Ensures text doesn't overflow */
+      max-width: 80%; /* Keeps text from running off-screen */
     }
     .finding {
       font-size: 20px;
@@ -49,13 +57,15 @@
   </style>
 </head>
 <body>
-  <div class="header">this is true...</div>
-  <div class="fact-container">
-    <div id="fact" class="fact"></div>
-  </div>
-  <div class="header" style="margin-top: 30px;">this means...</div>
-  <div class="fact-container">
-    <div id="finding" class="finding"></div>
+  <div class="container">
+    <div class="fact-container">
+      <div class="header">this is true...</div>
+      <div id="fact" class="fact"></div>
+    </div>
+    <div class="fact-container" style="margin-top: 30px;">
+      <div class="header">this means...</div>
+      <div id="finding" class="finding"></div>
+    </div>
   </div>
   <div class="archive"><a href="archive.html">archive</a></div>
 
@@ -86,3 +96,4 @@
   </script>
 </body>
 </html>
+
