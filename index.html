@@ -18,18 +18,14 @@
       align-items: flex-start;
       max-width: 80%; /* Wraps text to fit within the viewport */
     }
-    .fact-container {
-      display: flex;
-      align-items: center; /* Vertically aligns headers with facts */
-      gap: 20px; /* Space between header and fact */
-      margin-bottom: 80px; /* Increased spacing between sections */
+    .section {
+      margin-bottom: 80px; /* Space between sections */
     }
     .header {
       color: #bbb; /* Lightened gray */
-      font-size: 18px; /* Further reduced size */
+      font-size: 18px; /* Reduced size */
       text-transform: lowercase;
-      flex-shrink: 0; /* Prevents the header from resizing */
-      margin-top: 10px; /* Adds more space between header and text */
+      margin-bottom: 20px; /* Space between header and text */
     }
     .fact, .finding {
       font-size: 28px; /* Matching fact and meaning statement sizes */
@@ -37,14 +33,10 @@
       white-space: normal; /* Wraps text properly */
       overflow-wrap: break-word; /* Ensures text doesn't overflow */
       max-width: 80%; /* Keeps text from running off-screen */
-      margin-left: 50px; /* Aligns fact and meaning left while separating from headers */
-    }
-    .finding {
-      margin-top: 50px; /* Adds even more space between fact and meaning statement */
     }
     .archive {
       position: absolute;
-      bottom: 100px; /* Moved archive link further up */
+      bottom: 120px; /* Moved archive link further up */
       right: 20px;
       color: #bbb;
       font-size: 18px;
@@ -60,11 +52,11 @@
 </head>
 <body>
   <div class="container">
-    <div class="fact-container">
+    <div class="section">
       <div class="header">this is true...</div>
       <div id="fact" class="fact"></div>
     </div>
-    <div class="fact-container" style="margin-top: 80px;">
+    <div class="section">
       <div class="header">this means...</div>
       <div id="finding" class="finding"></div>
     </div>
