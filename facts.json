@@ -1,14 +1,17 @@
 [
   {
-    "fact": "In 2022, undocumented immigrants paid nearly $100B in federal, state, and local taxes.",
+    "fact": "In 2022, undocumented immigrants paid nearly $100 billion in federal, state, and local taxes.",
+    "meaning": "Undocumented immigrants contribute billions to public services they can’t even use.",
     "tags": ["#immigration", "#economy"]
   },
   {
     "fact": "The 2017 Trump tax cuts overwhelmingly benefited corporations and the top 1%.",
+    "meaning": "While marketed as middle-class relief, the biggest winners were wealthy individuals and businesses.",
     "tags": ["#taxes", "#wealth"]
   },
   {
     "fact": "Medicaid expansion under the ACA reduced uninsured rates in the poorest states by over 50%.",
+    "meaning": "The ACA provided healthcare access to millions who previously had none.",
     "tags": ["#healthcare", "#ACA"]
   }
 ]
