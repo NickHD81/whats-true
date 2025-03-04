@@ -22,27 +22,28 @@
       display: flex;
       align-items: center; /* Vertically aligns headers with facts */
       gap: 20px; /* Space between header and fact */
-      margin-bottom: 30px; /* Adds more spacing between sections */
+      margin-bottom: 50px; /* Increased spacing between sections */
     }
     .header {
       color: #bbb; /* Lightened gray */
-      font-size: 20px; /* Reduced size */
+      font-size: 18px; /* Further reduced size */
       text-transform: lowercase;
       flex-shrink: 0; /* Prevents the header from resizing */
+      margin-top: 10px; /* Adds more space between header and text */
     }
     .fact, .finding {
-      font-size: 28px;
+      font-size: 28px; /* Matching fact and meaning statement sizes */
       font-weight: bold;
       white-space: normal; /* Wraps text properly */
       overflow-wrap: break-word; /* Ensures text doesn't overflow */
       max-width: 80%; /* Keeps text from running off-screen */
     }
     .finding {
-      font-size: 20px;
+      margin-top: 30px; /* Adds more space between fact and meaning statement */
     }
     .archive {
       position: absolute;
-      bottom: 20px;
+      bottom: 60px; /* Moved archive link up */
       right: 20px;
       color: #bbb;
       font-size: 18px;
@@ -62,7 +63,7 @@
       <div class="header">this is true...</div>
       <div id="fact" class="fact"></div>
     </div>
-    <div class="fact-container">
+    <div class="fact-container" style="margin-top: 50px;">
       <div class="header">this means...</div>
       <div id="finding" class="finding"></div>
     </div>
