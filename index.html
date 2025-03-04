@@ -75,7 +75,7 @@
       .then(facts => {
         const randomFact = facts[Math.floor(Math.random() * facts.length)];
         typeWriter("fact", randomFact.fact, 75, () => {
-          setTimeout(() => typeWriter("finding", "undocumented immigrants not only pay more than billionaires and corporations, they pay more than their fair share. on a pure cost-benefit basis, they pay more than you.", 75), 500);
+          setTimeout(() => typeWriter("finding", randomFact.meaning, 75), 500);
         });
       })
       .catch(error => console.error('Error loading facts:', error));
@@ -96,4 +96,3 @@
   </script>
 </body>
 </html>
-
